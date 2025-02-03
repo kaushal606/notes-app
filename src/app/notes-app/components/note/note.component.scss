@@ -1,0 +1,43 @@
+ .notes-area {
+    padding: 0px 0px 20px 20px;
+    width: 326px;
+    height: 252px;
+    overflow: hidden;
+    margin: 15px;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: none;
+    -webkit-box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+
+    .note-header {
+        display: flex;
+        justify-content: space-between;
+
+        .note-title {
+            padding-top: 8px;
+
+            .title {
+                font-size: 24px;
+                color: #673ab7;
+            }
+        }
+    }
+  }
+
+  .lock-overlay {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #673ab745;
+    cursor: pointer;
+  }

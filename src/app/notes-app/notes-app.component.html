@@ -1,0 +1,40 @@
+<div class="layout">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <h1 class="example-app-name">Notes App</h1>
+  </mat-toolbar>
+  <app-notes-panel [listLength]="notesList.length" [isExpanded]="notesList.length > 0 ? true : false">
+    <form [formGroup]="notesForm" slot="content" style="width: 80%;">
+      <h2 style="margin-top: 9px;">{{editData ? "Edit Your Note " : "Create Your Note"}}</h2>
+      <div class="textarea-container">
+        <mat-accordion style="margin: auto;">
+          <mat-expansion-panel style="box-shadow: 0 0px 40px rgba(0, 0, 0, 0.05);
+          padding: 1.5rem;
+          border-radius: 20px;" hideToggle #panel1>
+            <mat-expansion-panel-header>
+              <mat-panel-title> <mat-icon style="font-size: 28px; margin-right: 12px; margin-top: -3px;">edit_note</mat-icon> Write Your
+                Note </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="NgxEditor__Wrapper">
+              <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+              <ngx-editor [editor]="editor" formControlName="noteText" [disabled]="false"
+                [placeholder]="'Type here...'"></ngx-editor>
+            </div>
+            <div class="btn-container">
+              <button mat-stroked-button (click)="closePanel(panel1)">
+                Close
+              </button>
+              <button mat-flat-button color="primary" (click)="addNote()" [disabled]="notesForm.invalid">
+                {{editData ? "Edit " : "Save"}}
+              </button>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </form>
+    <div class="notes-list" slot="drawer">
+      <div *ngFor="let note of notesList; index as i">
+        <app-note [noteData]="note" (onEdit)="editNote(note); openPanel(panel1)" (onDelete)="deleteNote(note.id)" (onLock)="openPasswordDialog(note.id, note.encrypted)" (onUnlock)="openPasswordDialog(note.id, note.encrypted)"></app-note>
+      </div>
+    </div>
+  </app-notes-panel>
+</div>

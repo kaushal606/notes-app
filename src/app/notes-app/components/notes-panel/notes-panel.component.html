@@ -1,0 +1,21 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" closed>
+      <div class="drawer-title" *ngIf="listLength > 0">
+        <span class="title"><mat-icon style="font-size: 36px; width: 38px; height: 36px;">list_alt</mat-icon>Your Notes</span>
+      </div>
+      <mat-divider></mat-divider>
+      <ng-content select="[slot='drawer']"></ng-content>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <div class="btn-container">
+        <button color="primary" *ngIf="listLength > 0" type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon style="font-size: 22px;">menu</mat-icon>
+        </button>
+      </div>
+      <div class="content-container">
+        <ng-content select="[slot='content']"></ng-content>
+      </div>
+    </div>
+  
+  </mat-drawer-container>

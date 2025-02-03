@@ -1,0 +1,43 @@
+.example-sidenav-content {
+    display: flex;
+    height: 1000vh;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 15px;
+    background-color: #f3f6fd;
+    height: 100vh;
+    overflow: auto;
+}
+
+.drawer-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .title {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+}
+
+::ng-deep {
+    .mat-drawer-container {
+        height: 100vh;
+    }
+}
+
+
+::ng-deep {
+    .mat-drawer-content {
+        height: 100vh;
+        overflow: hidden;
+    }
+}

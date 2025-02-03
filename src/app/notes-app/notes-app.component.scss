@@ -1,0 +1,65 @@
+.text-area, .color-select {
+  display: block;
+}
+
+.text-area {
+  width: 300px;
+  height: 100px;
+}
+
+.add-btn, .color-select{
+  width: 150px;
+  padding: 0.5rem;
+}
+
+
+.add-btn, .notes-btn {
+  background-color: lightgrey;
+  border: none;
+  cursor: pointer;
+}
+
+.notes-area {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.notes-text {
+  width: 60%;
+  align-self: center;
+}
+
+.notes-btn {
+  height: 2rem;
+  width: 20%;
+  margin: 0 0.5rem;
+}
+
+.textarea-container {
+  width: 100%;
+  margin: auto;
+}
+
+ngx-editor {
+  display: block; /* Ensures it's a block element */
+  width: 100%;   /* Set desired width */
+  height: 250px;  /* Set desired height */
+  overflow: auto; /* Optional for scrollable content */
+}
+
+
+::ng-deep {
+  .NgxEditor__Content {
+    width: 100%;
+    height: 250px;  
+  }
+}
+
+.btn-container {
+  margin-top: 20px;
+  margin-left: auto;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
